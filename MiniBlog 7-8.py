@@ -24,8 +24,11 @@ class MiniBlog:
         with open("posts.json", "w", encoding="utf-8") as file:
             json.dump(self.posts, file, ensure_ascii=False, indent=4)
         print("JSON файл сақталды")
-blog = MiniBlog()
-blog.add_post("Кино", "Пейіш киносы маған қатты ұнады!", "17.05.2026", "Nurzhan")
-blog.add_post("Спорт", "Бүгін достарыммен бірге жүгірдім", "18.05.2026", "Gaukhar")
-blog.find_by_author("Nurzhan")
-blog.export_json()
+
+if __name__ == "__main__":
+    blog = MiniBlog()
+
+    blog.add_post("Кино", "Пейіш киносы маған қатты ұнады!", "17.05.2026", "Nurzhan")
+    blog.add_post("Спорт", "Бүгін достарыммен бірге жүгірдім", "18.05.2026", "Gaukhar")
+    blog.find_by_author("Nurzhan")
+    blog.export_json()
